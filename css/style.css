@@ -624,7 +624,6 @@ headerscroll .close-menu {
         font-size: 2rem;
     }
     .section-title {
-        font-size: 1.6rem; /* Un peu plus petit pour éviter que ça déborde */
         padding: 0 0;
     }
     .footer {
