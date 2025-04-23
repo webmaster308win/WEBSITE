@@ -74,7 +74,7 @@ a {
     position: fixed;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 80%;
     height: 100%;
     background: white;
     z-index: 999;
@@ -616,9 +616,6 @@ headerscroll .close-menu {
 @media (max-width: 600px) {
     .hero-text {
         font-size: 2rem;
-    }
-    .mobile-menu {
-    width: 70%;
     }
     .footer {
     font-size: 12px; /* Taille plus petite sur mobile */
