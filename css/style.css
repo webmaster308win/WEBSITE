@@ -617,6 +617,9 @@ headerscroll .close-menu {
     .hero-text {
         font-size: 2rem;
     }
+    .mobile-menu {
+    width: 70%;
+    }
     .footer {
     font-size: 12px; /* Taille plus petite sur mobile */
     padding: 15px 0; /* Réduit un peu l'espace sur les petits écrans */
