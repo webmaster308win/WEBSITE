@@ -595,6 +595,9 @@ headerscroll .close-menu {
     .hero-text {
         font-size: 2.5rem;
     }
+    .hero-banner {
+    height: 300px;
+    }    
     .hero-banner-content {
         font-size: 1rem;
     }
