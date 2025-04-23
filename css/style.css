@@ -341,7 +341,7 @@ headerscroll .close-menu {
 /* Partners */
 .partners-section {
     background: #fff;
-    padding: 50px 80px;
+    padding: 50px 50px;
     margin-bottom: 20px;
 }
 
@@ -355,8 +355,16 @@ headerscroll .close-menu {
     margin: 0 auto;
     max-width: 350px;
 }
-
+.partners-section .partner3 {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 350px;
+}
 .partners-section .partner img {
+    width: 250px;
+    margin-bottom: 10px;
+}
+.partners-section .partner3 img {
     width: 250px;
     margin-bottom: 10px;
 }
@@ -522,6 +530,10 @@ headerscroll .close-menu {
         grid-template-columns: repeat(2, 1fr);
         justify-content: center;
     }
+    .partner3 {
+        grid-column: 1 / -1; /* Prend toute la largeur */
+        justify-self: center; /* Centre juste lui parce qu'il y a 3 partners*/
+    }
 }
 
 /* Quand l'écran fait moins de 1170px */
@@ -607,8 +619,7 @@ headerscroll .close-menu {
     }
     /* Titre des installations et partenaires */
     .section-title {
-        font-size: 2rem; /* Un peu plus petit pour éviter que ça déborde */
-        padding: 0 20px; /* Légère marge intérieure pour éviter que le texte colle aux bords */
+        font-size: 2rem; /* Légère marge intérieure pour éviter que le texte colle aux bords */
     }
     .partners-section .partners {
         grid-template-columns: 1fr;
@@ -623,9 +634,7 @@ headerscroll .close-menu {
     .hero-text {
         font-size: 2rem;
     }
-    .section-title {
-        padding: 0 0;
-    }
+    
     .footer {
         font-size: 12px; /* Taille plus petite sur mobile */
         padding: 15px 0; /* Réduit un peu l'espace sur les petits écrans */
