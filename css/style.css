@@ -88,8 +88,7 @@ a {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .mobile-info {
-    margin-top: 40px;
-    padding: 20px;
+    padding: 5px 20px;
     font-size: 14px;
     color: #272829;
     text-align: center;
@@ -145,12 +144,12 @@ a {
 }
 
 .mobile-menu ul li {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .mobile-menu ul li a {
     color: #272829;
-    font-size: 24px;
+    font-size: 23px;
     text-decoration: none;
     font-weight: bold;
 }
