@@ -1,0 +1,626 @@
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #272829;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navbar */
+#header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.5s;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    position : relative;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    color: #fff;
+    padding: 20px 20px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.menu li a:hover {
+    color: #b29f82;
+}
+
+/* Hamburger caché par défaut */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    left: 30px; /* --> Hamburger collé à gauche */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Mobile menu caché */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: white;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.mobile-info {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 14px;
+    color: #272829;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.mobile-info p {
+    margin: 10px 0;
+}
+
+.logo-desktop img {
+    margin-top: 7px;
+    height: 150px;
+    padding: 20px 30px;
+    transition: height 0.5s ease, transform 0.5s ease;
+}
+.logo-mobile img {
+    margin-top: 6px;
+    height: 150px;
+    padding: 20px 20px;
+    transition: height 0.5s ease, transform 0.5s ease;
+}
+.logo-desktop {
+    display: block;
+}
+
+.logo-mobile {
+    display: none;
+}
+
+/* Overlay noir semi-transparent */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6); /* Noir semi-transparent */
+    opacity: 0;
+    pointer-events: none;
+    z-index: 998;
+    transition: opacity 0.5s ease;
+}
+
+/* Quand actif */
+#overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.mobile-menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+    color: #272829;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.mobile-menu li a:hover {
+    color: #b29f82;
+}
+/* Bouton fermer */
+.close-menu {
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    background: none;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    color: #272829;
+}
+
+/* Quand ouvert */
+.mobile-menu.open {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+
+header.scrolled .logo-desktop img {
+    height: 100px; /* Réduit la taille du logo */
+    padding: 10px 15px;
+}
+
+header.scrolled .logo-mobile img {
+    height: 70px; /* Réduit la taille du logo */
+    padding: 5px 5px;
+}
+
+headerscroll .close-menu {
+    height: 55px;
+}
+
+
+/* Hero */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Assure-toi que la hauteur de la section est définie */
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%); /* Cela rend l'image un peu plus sombre pour que le texte soit plus lisible */
+}
+
+.hero-text {
+    position: absolute;
+    white-space: nowrap;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrer parfaitement l'élément */
+    text-align: center;
+    color: white;
+    font-size: clamp(3rem, 4vw, 4rem);
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: row; /* Par défaut, le texte est en ligne (sur une seule ligne) */
+    justify-content: center;
+    align-items: center;
+}
+.hero-text h1 {
+    margin: 0;
+}
+
+.hero-text .granby {
+    display: inline-block; /* Garde "GRANBY" en ligne par défaut */
+}
+
+
+/* Présentation */
+.presentation {
+  background: #fff;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #b29f82;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.installations-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 40px;
+}
+
+.installation {
+    background: #efefef;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.installation img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.installation h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #272829;
+}
+
+.installation p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+@media (max-width: 1024px) {
+    .installations-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .section-title {
+    font-size: 2rem; /* Un peu plus petit pour éviter que ça déborde */
+    padding: 0 20px; /* Légère marge intérieure pour éviter que le texte colle aux bords */
+  }
+}
+
+@media (max-width: 700px) {
+    .installations-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Section du bandeau avec image de fond */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('../images/hero-banner.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Ajoute ceci */
+.hero-banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Noir semi-transparent */
+    z-index: 1;
+}
+
+/* Et ajoute un z-index plus haut pour ton contenu */
+.hero-banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.hero-banner-button {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: #b29f82; /* couleur dorée */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hero-banner-button:hover {
+    transform: translateY(-2px); /* petit effet "levé" au hover */
+}
+
+/* Partners */
+.partners-section {
+    background: #fff;
+    padding: 50px 80px;
+    margin-bottom: 20px;
+}
+
+.partners-section .partners {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.partners-section .partner {
+    text-align: center;
+    max-width: 350px;
+}
+
+.partners-section .partner img {
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .partners-section .partners {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .partners-section .partners {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Onglet sur le côté */
+.side-tab {
+  position: fixed;
+  top: 30%;
+  right: 0;
+  width: 60px; /* largeur fermée */
+  background-color: #b29f82;
+  color: #000;
+  height: auto;
+  transition: width 0.5s cubic-bezier(0.77, 0, 0.175, 1), background-color 0.5s ease;
+  overflow: hidden;
+  box-shadow: -2px 2px 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+/* Contenu */
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 30px;
+}
+
+/* Chaque item (icone + texte) */
+.info-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Icones */
+.icon {
+  margin-left: 8px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  fill: #000; /* noir */
+}
+
+/* Texte */
+.text {
+  margin-left: 15px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #000;
+  text-shadow: 0 0 1px rgba(0,0,0,0.2); /* effet doux */
+}
+
+/* Ouverture */
+.side-tab.open {
+  width: 580px;
+  background-color: #ffffff;
+  align-items: flex-start;
+}
+
+.side-tab.open .text {
+  opacity: 1;
+}
+
+/* Cacher sur mobile */
+@media (max-width: 768px) {
+  .side-tab {
+    display: none;
+  }
+}
+
+/* pre-footer */
+.pre-footer-banner {
+  position: relative;
+  background-image: url('../images/granby.jpg'); /* Mets ton image ici */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pre-footer-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Assombrit à 70% */
+  z-index: 1;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-content h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.logo-link img {
+  width: 200px;
+  height: auto;
+  transition: transform 0.3s ease; /* Animation douce */
+}
+
+.logo-link:hover img {
+  transform: scale(1.1); /* Grossit légèrement au survol */
+}
+
+
+/* Footer */
+.footer {
+  background-color: #333; /* fond gris sobre */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+
+/*Responsive */
+/* Menu Responsive */
+/* Quand l'écran fait moins de 1200px */
+@media (max-width: 1420px) {
+    .menu {
+        gap: 15px;
+    }
+    .menu li a {
+        padding: 15px 15px;
+    }
+}
+
+/* Quand l'écran fait moins de 1024px */
+@media (max-width: 1300px) {
+    .menu {
+        gap: 10px;
+    }
+    .menu li a {
+        padding: 10px 10px;
+    }
+}
+
+@media (max-width: 1170px) {
+    .navbar {
+        flex-wrap: wrap; /* Permet aux enfants de passer à la ligne */
+    }
+    #menu-left,
+    #menu-right {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 10px 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    #menu-left li, #menu-right li {
+        justify-self: center; /* <-- et ajoute ceci */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .menu, #menu-left, #menu-right {
+        display: none;
+    }
+    .menu.show, #menu-left.show, #menu-right.show {
+        display: flex;
+        flex-direction: column;
+        background: rgba(31, 31, 31, 0.95);
+        width: 100%;
+        position:absolute;
+        top: 60px;
+        left: 0;
+    }
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .logo-desktop {
+        display: none;
+    }
+    .logo-mobile {
+        display: block;
+    }
+}
+@media (max-width: 1100px) {
+    .hero-text .granby {
+        display: block; /* Sur mobile, "GRANBY" devient un bloc et passe sous le reste du texte */
+    }
+}
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 600px) {
+    .hero-text {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 12px; /* Taille plus petite sur mobile */
+    padding: 15px 0; /* Réduit un peu l'espace sur les petits écrans */
+  }
+}
