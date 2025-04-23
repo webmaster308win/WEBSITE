@@ -476,23 +476,23 @@ headerscroll .close-menu {
 }
 
 .logo-link img {
-  width: 200px;
-  height: auto;
-  transition: transform 0.3s ease; /* Animation douce */
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease; /* Animation douce */
 }
 
 .logo-link:hover img {
-  transform: scale(1.1); /* Grossit légèrement au survol */
+    transform: scale(1.1); /* Grossit légèrement au survol */
 }
 
 
 /* Footer */
 .footer {
-  background-color: #333; /* fond gris sobre */
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 14px;
+    background-color: #333; /* fond gris sobre */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
 }
 
 
@@ -566,7 +566,7 @@ headerscroll .close-menu {
     }
     /* Cacher l'onglet latéral */
     .side-tab {
-    display: none;
+        display: none;
   }
     .menu.show, #menu-left.show, #menu-right.show {
         display: flex;
@@ -599,10 +599,14 @@ headerscroll .close-menu {
     .hero-banner-content {
         font-size: 1rem;
     }
+    .hero-banner-button {
+        font-size: 0.8rem;   
+        padding: 10px 20px;
+    }
     /* Titre des installations et partenaires */
     .section-title {
-    font-size: 2rem; /* Un peu plus petit pour éviter que ça déborde */
-    padding: 0 20px; /* Légère marge intérieure pour éviter que le texte colle aux bords */
+        font-size: 2rem; /* Un peu plus petit pour éviter que ça déborde */
+        padding: 0 20px; /* Légère marge intérieure pour éviter que le texte colle aux bords */
     }
     .partners-section .partners {
         grid-template-columns: 1fr;
@@ -617,9 +621,13 @@ headerscroll .close-menu {
     .hero-text {
         font-size: 2rem;
     }
+    .section-title {
+        font-size: 1.6rem; /* Un peu plus petit pour éviter que ça déborde */
+        padding: 0 0;
+    }
     .footer {
-    font-size: 12px; /* Taille plus petite sur mobile */
-    padding: 15px 0; /* Réduit un peu l'espace sur les petits écrans */
+        font-size: 12px; /* Taille plus petite sur mobile */
+        padding: 15px 0; /* Réduit un peu l'espace sur les petits écrans */
   }
 }
 
